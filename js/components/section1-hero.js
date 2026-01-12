@@ -39,6 +39,10 @@
         logoInitialWidth: 250,       // Hero logo width (px)
         logoFinalWidth: 60,          // Navbar logo width (px)
 
+        // Logo fade transition point
+        logoFadeStart: 0.3,          // Start fading at 30% scroll
+        logoFadeEnd: 0.6,            // Complete fade at 60% scroll
+
         // Reduced motion
         reducedMotion: window.matchMedia('(prefers-reduced-motion: reduce)').matches
       };
@@ -70,7 +74,11 @@
     setupInitialState() {
       // Ensure navbar logo is hidden initially
       if (this.navbarLogo) {
-        gsap.set(this.navbarLogo, { width: this.config.logoInitialWidth });
+        gsap.set(this.navbarLogo, { opacity: 0, autoAlpha: 0 });
+      }
+      // Hero logo (white) is visible initially
+      if (this.heroLogo) {
+        gsap.set(this.heroLogo, { width: this.config.logoInitialWidth, opacity: 1 });
       }
     }
 
@@ -137,26 +145,30 @@
         });
       }
 
-      // === LOGO TRANSITION (synced with tagline) ===
+      // === LOGO CROSS-FADE TRANSITION ===
+      // White hero logo fades out, Black navbar logo fades in
+      const fadeProgress = Math.min(
+        Math.max((progress - this.config.logoFadeStart) / (this.config.logoFadeEnd - this.config.logoFadeStart), 0),
+        1
+      );
+
+      // Fade out white hero logo
       if (this.heroLogo) {
-        // Calculate width interpolation (250px → 40px)
-        // Reaches 40px at 100% scroll (same time tagline reaches 24px)
-        const logoWidth = this.config.logoInitialWidth -
-          (progress * (this.config.logoInitialWidth - this.config.logoFinalWidth));
-
-        // Calculate vertical position (hero center 50% → navbar center 40px)
-        // Logo is fixed position, so we animate 'top' from 50% to 40px
-        const viewportHeight = window.innerHeight;
-        const heroCenterY = viewportHeight / 2;
-        const navbarCenterY = 40; // Navbar height / 2
-        const topPosition = heroCenterY - (progress * (heroCenterY - navbarCenterY));
-
-        // Animate hero logo - smooth easing
-        // NO fade, NO cross-dissolve - just smooth size and position change
+        const heroOpacity = 1 - fadeProgress;
         gsap.to(this.heroLogo, {
-          width: logoWidth,
-          top: topPosition,
-          opacity: 1, // Always visible
+          opacity: heroOpacity,
+          duration: 0.15,
+          ease: 'power2.out',
+          overwrite: 'auto'
+        });
+      }
+
+      // Fade in black navbar logo
+      if (this.navbarLogo) {
+        const navbarOpacity = fadeProgress;
+        gsap.to(this.navbarLogo, {
+          opacity: navbarOpacity,
+          autoAlpha: navbarOpacity,
           duration: 0.15,
           ease: 'power2.out',
           overwrite: 'auto'
@@ -171,9 +183,11 @@
       if (this.heroLogo) {
         gsap.set(this.heroLogo, {
           width: this.config.logoInitialWidth,
-          top: '50%',
           opacity: 1
         });
+      }
+      if (this.navbarLogo) {
+        gsap.set(this.navbarLogo, { opacity: 0, autoAlpha: 0 });
       }
     }
 
@@ -182,11 +196,10 @@
         gsap.set(this.navTaglineText, { fontSize: this.config.taglineFinalSize });
       }
       if (this.heroLogo) {
-        gsap.set(this.heroLogo, {
-          width: this.config.logoFinalWidth,
-          top: 40, // Navbar center
-          opacity: 1
-        });
+        gsap.set(this.heroLogo, { opacity: 0 });
+      }
+      if (this.navbarLogo) {
+        gsap.set(this.navbarLogo, { opacity: 1, autoAlpha: 1 });
       }
     }
 
