@@ -1,7 +1,7 @@
 /**
  * UNO JERSEY - Temukan Preview Section
  * Preview of the first question from Temukan quiz
- * When user clicks an option, the "Lanjut" button becomes enabled
+ * Options are clickable for visual feedback only
  */
 
 (function() {
@@ -9,7 +9,6 @@
 
   class TemukanPreview {
     constructor() {
-      this.selectedOption = null;
       this.nextBtn = document.getElementById('previewNextBtn');
       this.optionsGrid = document.getElementById('previewOptionsGrid');
 
@@ -19,7 +18,11 @@
     }
 
     init() {
-      // Add click handlers to option cards
+      // Set the button href to temukan.html without any parameters
+      this.nextBtn.href = '/temukan.html';
+      this.nextBtn.disabled = false;
+
+      // Add click handlers to option cards for visual feedback only
       const optionCards = this.optionsGrid.querySelectorAll('.preview-option-card');
       optionCards.forEach(card => {
         card.addEventListener('click', () => this.selectOption(card));
@@ -31,30 +34,8 @@
       const allCards = this.optionsGrid.querySelectorAll('.preview-option-card');
       allCards.forEach(c => c.classList.remove('selected'));
 
-      // Add selection to clicked card
+      // Add selection to clicked card for visual feedback
       card.classList.add('selected');
-
-      // Save the selected value
-      this.selectedOption = card.dataset.value;
-
-      // Enable the next button and update the URL
-      this.enableNextButton();
-    }
-
-    enableNextButton() {
-      // Enable the button
-      this.nextBtn.disabled = false;
-
-      // Update the href to include the selected sport
-      this.nextBtn.href = `/temukan.html?sport=${this.selectedOption}`;
-
-      // Update button text
-      this.nextBtn.innerHTML = `
-        LANJUT KE QUIZ
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
-      `;
     }
   }
 
