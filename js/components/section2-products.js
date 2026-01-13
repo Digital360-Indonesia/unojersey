@@ -12,8 +12,8 @@
   const modelItems = document.querySelectorAll('.product-model-item');
   const infoItems = document.querySelectorAll('.product-info-item');
 
-  let currentProduct = 'basketball';
-  const products = ['basketball', 'futsal', 'volleyball', 'football', 'custom'];
+  let currentProduct = 'baseball';
+  const products = ['baseball', 'basic', 'basket', 'polo', 'set'];
   const totalProducts = products.length;
 
   /**

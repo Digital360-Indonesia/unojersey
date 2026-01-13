@@ -10,11 +10,11 @@ const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw1oM7JOETvzm
 const quizState = {
     currentStep: 'intro',
     answers: {
-        q1_sport: null,
-        q2_teamSize: null,
-        q3_style: null,
-        q4_budget: null,
-        q5_urgency: null
+        q1_model: null,
+        q2_quantity: null,
+        q3_feature: null,
+        q4_timeline: null,
+        q5_budget: null
     },
     userData: {
         name: '',
@@ -25,139 +25,139 @@ const quizState = {
 
 // Recommendation mapping based on quiz answers
 const recommendationMap = {
-    // Basketball combinations
-    'basketball-bold': {
-        jersey: 'Jersey Basketball Bold Edition',
-        type: 'Basketball Jersey',
-        style: 'Bold'
+    // Basic Jersey combinations
+    'basic-nama-nomor': {
+        jersey: 'Jersey Basic Custom Name',
+        type: 'Basic Jersey',
+        feature: 'Nama & Nomor'
     },
-    'basketball-minimalis': {
-        jersey: 'Jersey Basketball Pro Minimalis',
-        type: 'Basketball Jersey',
-        style: 'Minimalis'
+    'basic-logo-tim': {
+        jersey: 'Jersey Basic Custom Logo',
+        type: 'Basic Jersey',
+        feature: 'Logo Tim'
     },
-    'basketball-klasik': {
-        jersey: 'Jersey Basketball Classic',
-        type: 'Basketball Jersey',
-        style: 'Klasik'
+    'basic-full-custom': {
+        jersey: 'Jersey Basic Full Custom',
+        type: 'Basic Jersey',
+        feature: 'Full Custom'
     },
-    'basketball-retro': {
-        jersey: 'Jersey Basketball Retro Style',
-        type: 'Basketball Jersey',
-        style: 'Retro'
+    'basic-warna': {
+        jersey: 'Jersey Basic Custom Color',
+        type: 'Basic Jersey',
+        feature: 'Warna Spesifik'
     },
-    'basketball-modern': {
-        jersey: 'Jersey Basketball Modern Tech',
-        type: 'Basketball Jersey',
-        style: 'Modern'
-    },
-
-    // Futsal combinations
-    'futsal-bold': {
-        jersey: 'Jersey Futsal Bold Strike',
-        type: 'Futsal Jersey',
-        style: 'Bold'
-    },
-    'futsal-minimalis': {
-        jersey: 'Jersey Futsal Minimalis Pro',
-        type: 'Futsal Jersey',
-        style: 'Minimalis'
-    },
-    'futsal-klasik': {
-        jersey: 'Jersey Futsal Classic V2',
-        type: 'Futsal Jersey',
-        style: 'Klasik'
-    },
-    'futsal-retro': {
-        jersey: 'Jersey Futsal Retro Legend',
-        type: 'Futsal Jersey',
-        style: 'Retro'
-    },
-    'futsal-modern': {
-        jersey: 'Jersey Futsal Modern Aero',
-        type: 'Futsal Jersey',
-        style: 'Modern'
+    'basic-semua': {
+        jersey: 'Jersey Basic Premium',
+        type: 'Basic Jersey',
+        feature: 'Semua Fitur'
     },
 
-    // Volleyball combinations
-    'voli-bold': {
-        jersey: 'Jersey Voli Bold Power',
-        type: 'Volleyball Jersey',
-        style: 'Bold'
+    // Basket Jersey combinations
+    'basket-nama-nomor': {
+        jersey: 'Jersey Basketball Custom Name',
+        type: 'Basketball Jersey',
+        feature: 'Nama & Nomor'
     },
-    'voli-minimalis': {
-        jersey: 'Jersey Voli Minimalis Lite',
-        type: 'Volleyball Jersey',
-        style: 'Minimalis'
+    'basket-logo-tim': {
+        jersey: 'Jersey Basketball Custom Logo',
+        type: 'Basketball Jersey',
+        feature: 'Logo Tim'
     },
-    'voli-klasik': {
-        jersey: 'Jersey Voli Classic Net',
-        type: 'Volleyball Jersey',
-        style: 'Klasik'
+    'basket-full-custom': {
+        jersey: 'Jersey Basketball Full Custom',
+        type: 'Basketball Jersey',
+        feature: 'Full Custom'
     },
-    'voli-retro': {
-        jersey: 'Jersey Voli Retro Smash',
-        type: 'Volleyball Jersey',
-        style: 'Retro'
+    'basket-warna': {
+        jersey: 'Jersey Basketball Custom Color',
+        type: 'Basketball Jersey',
+        feature: 'Warna Spesifik'
     },
-    'voli-modern': {
-        jersey: 'Jersey Voli Modern Flex',
-        type: 'Volleyball Jersey',
-        style: 'Modern'
-    },
-
-    // Running combinations
-    'running-bold': {
-        jersey: 'Jersey Running Bold Sprint',
-        type: 'Running Jersey',
-        style: 'Bold'
-    },
-    'running-minimalis': {
-        jersey: 'Jersey Running Minimalis Run',
-        type: 'Running Jersey',
-        style: 'Minimalis'
-    },
-    'running-klasik': {
-        jersey: 'Jersey Running Classic Pace',
-        type: 'Running Jersey',
-        style: 'Klasik'
-    },
-    'running-retro': {
-        jersey: 'Jersey Running Retro Track',
-        type: 'Running Jersey',
-        style: 'Retro'
-    },
-    'running-modern': {
-        jersey: 'Jersey Running Modern Flow',
-        type: 'Running Jersey',
-        style: 'Modern'
+    'basket-semua': {
+        jersey: 'Jersey Basketball Premium',
+        type: 'Basketball Jersey',
+        feature: 'Semua Fitur'
     },
 
-    // Default for "Lainnya"
-    'lainnya-bold': {
-        jersey: 'Jersey Custom Bold Edition',
-        type: 'Custom Jersey',
-        style: 'Bold'
+    // Baseball Jersey combinations
+    'baseball-nama-nomor': {
+        jersey: 'Jersey Baseball Custom Name',
+        type: 'Baseball Jersey',
+        feature: 'Nama & Nomor'
     },
-    'lainnya-minimalis': {
-        jersey: 'Jersey Custom Minimalis',
-        type: 'Custom Jersey',
-        style: 'Minimalis'
+    'baseball-logo-tim': {
+        jersey: 'Jersey Baseball Custom Logo',
+        type: 'Baseball Jersey',
+        feature: 'Logo Tim'
     },
-    'lainnya-klasik': {
-        jersey: 'Jersey Custom Classic',
-        type: 'Custom Jersey',
-        style: 'Klasik'
+    'baseball-full-custom': {
+        jersey: 'Jersey Baseball Full Custom',
+        type: 'Baseball Jersey',
+        feature: 'Full Custom'
     },
-    'lainnya-retro': {
-        jersey: 'Jersey Custom Retro',
-        type: 'Custom Jersey',
-        style: 'Retro'
+    'baseball-warna': {
+        jersey: 'Jersey Baseball Custom Color',
+        type: 'Baseball Jersey',
+        feature: 'Warna Spesifik'
     },
-    'lainnya-modern': {
-        jersey: 'Jersey Custom Modern',
-        type: 'Custom Jersey',
-        style: 'Modern'
+    'baseball-semua': {
+        jersey: 'Jersey Baseball Premium',
+        type: 'Baseball Jersey',
+        feature: 'Semua Fitur'
+    },
+
+    // Polo Jersey combinations
+    'polo-nama-nomor': {
+        jersey: 'Jersey Polo Custom Name',
+        type: 'Polo Jersey',
+        feature: 'Nama & Nomor'
+    },
+    'polo-logo-tim': {
+        jersey: 'Jersey Polo Custom Logo',
+        type: 'Polo Jersey',
+        feature: 'Logo Tim'
+    },
+    'polo-full-custom': {
+        jersey: 'Jersey Polo Full Custom',
+        type: 'Polo Jersey',
+        feature: 'Full Custom'
+    },
+    'polo-warna': {
+        jersey: 'Jersey Polo Custom Color',
+        type: 'Polo Jersey',
+        feature: 'Warna Spesifik'
+    },
+    'polo-semua': {
+        jersey: 'Jersey Polo Premium',
+        type: 'Polo Jersey',
+        feature: 'Semua Fitur'
+    },
+
+    // Set Jersey combinations
+    'set-nama-nomor': {
+        jersey: 'Jersey Set Custom Name',
+        type: 'Jersey Set',
+        feature: 'Nama & Nomor'
+    },
+    'set-logo-tim': {
+        jersey: 'Jersey Set Custom Logo',
+        type: 'Jersey Set',
+        feature: 'Logo Tim'
+    },
+    'set-full-custom': {
+        jersey: 'Jersey Set Full Custom',
+        type: 'Jersey Set',
+        feature: 'Full Custom'
+    },
+    'set-warna': {
+        jersey: 'Jersey Set Custom Color',
+        type: 'Jersey Set',
+        feature: 'Warna Spesifik'
+    },
+    'set-semua': {
+        jersey: 'Jersey Set Premium',
+        type: 'Jersey Set',
+        feature: 'Semua Fitur'
     }
 };
 
@@ -190,33 +190,33 @@ function initQuiz() {
         showScreen('q1');
     });
 
-    // Question 1 - Sport
+    // Question 1 - Model Jersey
     setupQuestionOptions('screen-q1', (value) => {
-        quizState.answers.q1_sport = value;
+        quizState.answers.q1_model = value;
         showScreen('q2');
     });
 
-    // Question 2 - Team Size
+    // Question 2 - Quantity
     setupQuestionOptions('screen-q2', (value) => {
-        quizState.answers.q2_teamSize = value;
+        quizState.answers.q2_quantity = value;
         showScreen('q3');
     });
 
-    // Question 3 - Style Preference
+    // Question 3 - Custom Features
     setupQuestionOptions('screen-q3', (value) => {
-        quizState.answers.q3_style = value;
+        quizState.answers.q3_feature = value;
         showScreen('q4');
     });
 
-    // Question 4 - Budget
+    // Question 4 - Timeline
     setupQuestionOptions('screen-q4', (value) => {
-        quizState.answers.q4_budget = value;
+        quizState.answers.q4_timeline = value;
         showScreen('q5');
     });
 
-    // Question 5 - Urgency
+    // Question 5 - Budget
     setupQuestionOptions('screen-q5', (value) => {
-        quizState.answers.q5_urgency = value;
+        quizState.answers.q5_budget = value;
         showScreen('form');
     });
 
@@ -293,14 +293,14 @@ async function handleFormSubmit(e) {
 
 // Calculate recommendation based on quiz answers
 function calculateRecommendation() {
-    const { q1_sport, q3_style } = quizState.answers;
-    const key = `${q1_sport}-${q3_style}`;
+    const { q1_model, q3_feature } = quizState.answers;
+    const key = `${q1_model}-${q3_feature}`;
 
     // Get recommendation from map, or use default
     const rec = recommendationMap[key] || {
         jersey: 'Jersey Custom Premium',
         type: 'Custom Jersey',
-        style: q3_style || 'Modern'
+        feature: q3_feature || 'Semua Fitur'
     };
 
     return rec;
@@ -314,11 +314,11 @@ async function submitQuizData() {
     const payload = {
         name: quizState.userData.name,
         phone: quizState.userData.phone,
-        sport: quizState.answers.q1_sport,
-        team_size: quizState.answers.q2_teamSize,
-        style: quizState.answers.q3_style,
-        budget: quizState.answers.q4_budget,
-        timeline: quizState.answers.q5_urgency,
+        model: quizState.answers.q1_model,
+        quantity: quizState.answers.q2_quantity,
+        feature: quizState.answers.q3_feature,
+        timeline: quizState.answers.q4_timeline,
+        budget: quizState.answers.q5_budget,
         recommendation: quizState.recommendation.jersey
     };
 
@@ -353,9 +353,9 @@ function displayResult() {
     // Update result elements
     document.getElementById('result-jersey-name').textContent = rec.jersey;
     document.getElementById('result-type').textContent = rec.type;
-    document.getElementById('result-style').textContent = rec.style;
-    document.getElementById('result-sport').textContent = getSportLabel(quizState.answers.q1_sport);
-    document.getElementById('result-team-size').textContent = getTeamSizeLabel(quizState.answers.q2_teamSize);
+    document.getElementById('result-style').textContent = rec.feature;
+    document.getElementById('result-sport').textContent = getModelLabel(quizState.answers.q1_model);
+    document.getElementById('result-team-size').textContent = getQuantityLabel(quizState.answers.q2_quantity);
 
     // Show result screen
     showScreen('result');
@@ -365,37 +365,37 @@ function displayResult() {
 function redirectToKreasikan() {
     const params = new URLSearchParams({
         jerseyType: quizState.recommendation.type,
-        style: quizState.recommendation.style,
+        feature: quizState.recommendation.feature,
         name: quizState.userData.name,
         phone: quizState.userData.phone,
-        sport: quizState.answers.q1_sport,
-        teamSize: quizState.answers.q2_teamSize
+        model: quizState.answers.q1_model,
+        quantity: quizState.answers.q2_quantity
     });
 
     window.location.href = `kreasikan/index.html?${params.toString()}`;
 }
 
-// Helper: Get sport label
-function getSportLabel(sport) {
+// Helper: Get model label
+function getModelLabel(model) {
     const labels = {
-        'basketball': 'Basket',
-        'futsal': 'Futsal',
-        'voli': 'Voli',
-        'running': 'Running',
-        'lainnya': 'Olahraga Lain'
+        'basic': 'Basic',
+        'basket': 'Basket',
+        'baseball': 'Baseball',
+        'polo': 'Polo',
+        'set': 'Set'
     };
-    return labels[sport] || sport;
+    return labels[model] || model;
 }
 
-// Helper: Get team size label
-function getTeamSizeLabel(size) {
+// Helper: Get quantity label
+function getQuantityLabel(quantity) {
     const labels = {
-        '1-5': '1-5 Orang',
-        '6-10': '6-10 Orang',
-        '11-15': '11-15 Orang',
-        '16+': '16+ Orang'
+        '1-5': '1-5 pcs',
+        '6-15': '6-15 pcs',
+        '16-30': '16-30 pcs',
+        '30+': '30+ pcs'
     };
-    return labels[size] || size;
+    return labels[quantity] || quantity;
 }
 
 // Initialize on DOM ready

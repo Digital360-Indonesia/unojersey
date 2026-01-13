@@ -123,15 +123,66 @@
           </p>
         </div>
 
-        <div class="products-container">
-          <!-- LEFT PANEL: Product Info Panel -->
-          <div class="product-info-panel">
-            <!-- Info for Product 1 (Basketball) -->
-            <div class="product-info-item" id="info-basketball">
-              <span class="product-info-label">BASKETBALL</span>
-              <h3 class="product-info-title">Jersey Basketball Premium</h3>
+        <!-- Mobile Carousel (Hidden on Desktop) -->
+        <div class="products-mobile-carousel">
+          <!-- Slide 1: Baseball -->
+          <div class="product-slide">
+            <div class="slide-image">
+              <div class="product-model-image">
+                <img src="/assets/images/Baseball.png" alt="Baseball Jersey" class="product-model-img" loading="lazy">
+              </div>
+            </div>
+            <div class="slide-info">
+              <span class="product-info-label">BASEBALL</span>
+              <h3 class="product-info-title">Jersey Baseball</h3>
               <p class="product-info-description">
-                Jersey basketball dengan bahan breathable dan desain modern untuk performa maksimal di lapangan.
+                Jersey baseball dengan potongan klasik dan material premium untuk kenyamanan sepanjang hari.
+              </p>
+              <ul class="product-info-features">
+                <li>Dry-fit material</li>
+                <li>Sublimation printing</li>
+                <li>Custom number & text</li>
+                <li>Durable stitching</li>
+              </ul>
+              <div class="product-info-price">Mulai dari Rp 65.000</div>
+            </div>
+          </div>
+
+          <!-- Slide 2: Basic -->
+          <div class="product-slide">
+            <div class="slide-image">
+              <div class="product-model-image">
+                <img src="/assets/images/Basic.png" alt="Basic Jersey" class="product-model-img" loading="lazy">
+              </div>
+            </div>
+            <div class="slide-info">
+              <span class="product-info-label">BASIC</span>
+              <h3 class="product-info-title">Jersey Basic</h3>
+              <p class="product-info-description">
+                Jersey basic serba guna dengan desain minimalis yang cocok untuk berbagai kebutuhan tim.
+              </p>
+              <ul class="product-info-features">
+                <li>Dry-fit material</li>
+                <li>Sublimation printing</li>
+                <li>Fully customizable</li>
+                <li>Comfortable fit</li>
+              </ul>
+              <div class="product-info-price">Mulai dari Rp 50.000</div>
+            </div>
+          </div>
+
+          <!-- Slide 3: Basket -->
+          <div class="product-slide">
+            <div class="slide-image">
+              <div class="product-model-image">
+                <img src="/assets/images/Basket.png" alt="Basket Jersey" class="product-model-img" loading="lazy">
+              </div>
+            </div>
+            <div class="slide-info">
+              <span class="product-info-label">BASKET</span>
+              <h3 class="product-info-title">Jersey Basket</h3>
+              <p class="product-info-description">
+                Jersey basket dengan bahan breathable dan desain modern untuk performa maksimal di lapangan.
               </p>
               <ul class="product-info-features">
                 <li>Dry-fit material</li>
@@ -139,109 +190,177 @@
                 <li>Customizable number & name</li>
                 <li>Anti-bacterial treatment</li>
               </ul>
-              <div class="product-info-price">Mulai dari Rp 150.000</div>
+              <div class="product-info-price">Mulai dari Rp 60.000</div>
             </div>
+          </div>
 
-            <!-- Info for Product 2 (Futsal) -->
-            <div class="product-info-item" id="info-futsal" style="display: none;">
-              <span class="product-info-label">FUTSAL</span>
-              <h3 class="product-info-title">Jersey Futsal Pro</h3>
+          <!-- Slide 4: Polo -->
+          <div class="product-slide">
+            <div class="slide-image">
+              <div class="product-model-image">
+                <img src="/assets/images/Polo.png" alt="Polo Jersey" class="product-model-img" loading="lazy">
+              </div>
+            </div>
+            <div class="slide-info">
+              <span class="product-info-label">POLO</span>
+              <h3 class="product-info-title">Jersey Polo</h3>
               <p class="product-info-description">
-                Desain aerodinamis dengan teknologi moisture-wicking untuk kenyamanan maksimal.
+                Jersey polo dengan kerah elegant dan material premium untuk tampilan profesional dan nyaman.
               </p>
               <ul class="product-info-features">
-                <li>Lightweight fabric</li>
-                <li>Quick-dry technology</li>
-                <li>Ergonomic fit</li>
+                <li>Dry-fit material</li>
+                <li>Sublimation printing</li>
+                <li>Custom logo & text</li>
+                <li>Breathable & anti-wrinkle</li>
+              </ul>
+              <div class="product-info-price">Mulai dari Rp 70.000</div>
+            </div>
+          </div>
+
+          <!-- Slide 5: Set -->
+          <div class="product-slide">
+            <div class="slide-image">
+              <div class="product-model-image">
+                <img src="/assets/images/Set.png" alt="Set Jersey" class="product-model-img" loading="lazy">
+              </div>
+            </div>
+            <div class="slide-info">
+              <span class="product-info-label">SET</span>
+              <h3 class="product-info-title">Jersey Set</h3>
+              <p class="product-info-description">
+                Satu set lengkap atasan dan bawahan dengan desain matching untuk tampilan tim yang kompak.
+              </p>
+              <ul class="product-info-features">
+                <li>Koordinasi atasan & bawahan</li>
+                <li>Dry-fit material</li>
+                <li>Sublimation printing</li>
+                <li>Full customization</li>
+              </ul>
+              <div class="product-info-price">Mulai dari Rp 100.000</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Desktop Three-Column Layout (Hidden on Mobile) -->
+        <div class="products-container">
+          <!-- LEFT PANEL: Product Info Panel -->
+          <div class="product-info-panel">
+            <!-- Info for Product 1 (Baseball) -->
+            <div class="product-info-item" id="info-baseball">
+              <span class="product-info-label">BASEBALL</span>
+              <h3 class="product-info-title">Jersey Baseball</h3>
+              <p class="product-info-description">
+                Jersey baseball dengan potongan klasik dan material premium untuk kenyamanan sepanjang hari.
+              </p>
+              <ul class="product-info-features">
+                <li>Dry-fit material</li>
+                <li>Sublimation printing</li>
+                <li>Custom number & text</li>
                 <li>Durable stitching</li>
               </ul>
-              <div class="product-info-price">Mulai dari Rp 140.000</div>
+              <div class="product-info-price">Mulai dari Rp 65.000</div>
             </div>
 
-            <!-- Info for Product 3 (Volleyball) -->
-            <div class="product-info-item" id="info-volleyball" style="display: none;">
-              <span class="product-info-label">VOLLEYBALL</span>
-              <h3 class="product-info-title">Jersey Volleyball Elite</h3>
+            <!-- Info for Product 2 (Basic) -->
+            <div class="product-info-item" id="info-basic" style="display: none;">
+              <span class="product-info-label">BASIC</span>
+              <h3 class="product-info-title">Jersey Basic</h3>
               <p class="product-info-description">
-                Jersey volleyball dengan bahan stretch yang nyaman untuk gerakan dinamis.
+                Jersey basic serba guna dengan desain minimalis yang cocok untuk berbagai kebutuhan tim.
               </p>
               <ul class="product-info-features">
-                <li>4-way stretch fabric</li>
-                <li>Breathable mesh panels</li>
-                <li>Reinforced stitching</li>
-                <li>UV protection</li>
+                <li>Dry-fit material</li>
+                <li>Sublimation printing</li>
+                <li>Fully customizable</li>
+                <li>Comfortable fit</li>
               </ul>
-              <div class="product-info-price">Mulai dari Rp 145.000</div>
+              <div class="product-info-price">Mulai dari Rp 50.000</div>
             </div>
 
-            <!-- Info for Product 4 (Football) -->
-            <div class="product-info-item" id="info-football" style="display: none;">
-              <span class="product-info-label">FOOTBALL</span>
-              <h3 class="product-info-title">Jersey Football Pro</h3>
+            <!-- Info for Product 3 (Basket) -->
+            <div class="product-info-item" id="info-basket" style="display: none;">
+              <span class="product-info-label">BASKET</span>
+              <h3 class="product-info-title">Jersey Basket</h3>
               <p class="product-info-description">
-                Jersey sepak bola dengan kualitas profesional untuk performa terbaik.
+                Jersey basket dengan bahan breathable dan desain modern untuk performa maksimal di lapangan.
               </p>
               <ul class="product-info-features">
-                <li>Performance fabric</li>
-                <li>Ventilated panels</li>
-                <li>Lightweight design</li>
-                <li>Premium durability</li>
+                <li>Dry-fit material</li>
+                <li>Sublimation printing</li>
+                <li>Customizable number & name</li>
+                <li>Anti-bacterial treatment</li>
               </ul>
-              <div class="product-info-price">Mulai dari Rp 160.000</div>
+              <div class="product-info-price">Mulai dari Rp 60.000</div>
             </div>
 
-            <!-- Info for Product 5 (Custom) -->
-            <div class="product-info-item" id="info-custom" style="display: none;">
-              <span class="product-info-label">CUSTOM</span>
-              <h3 class="product-info-title">Jersey Custom Design</h3>
+            <!-- Info for Product 4 (Polo) -->
+            <div class="product-info-item" id="info-polo" style="display: none;">
+              <span class="product-info-label">POLO</span>
+              <h3 class="product-info-title">Jersey Polo</h3>
               <p class="product-info-description">
-                Buat jersey sesuai desain impianmu dengan kualitas premium.
+                Jersey polo dengan kerah elegant dan material premium untuk tampilan profesional dan nyaman.
               </p>
               <ul class="product-info-features">
+                <li>Dry-fit material</li>
+                <li>Sublimation printing</li>
+                <li>Custom logo & text</li>
+                <li>Breathable & anti-wrinkle</li>
+              </ul>
+              <div class="product-info-price">Mulai dari Rp 70.000</div>
+            </div>
+
+            <!-- Info for Product 5 (Set) -->
+            <div class="product-info-item" id="info-set" style="display: none;">
+              <span class="product-info-label">SET</span>
+              <h3 class="product-info-title">Jersey Set</h3>
+              <p class="product-info-description">
+                Satu set lengkap atasan dan bawahan dengan desain matching untuk tampilan tim yang kompak.
+              </p>
+              <ul class="product-info-features">
+                <li>Koordinasi atasan & bawahan</li>
+                <li>Dry-fit material</li>
+                <li>Sublimation printing</li>
                 <li>Full customization</li>
-                <li>Premium materials</li>
-                <li>Expert consultation</li>
-                <li>Bulk discounts</li>
               </ul>
-              <div class="product-info-price">Mulai dari Rp 175.000</div>
+              <div class="product-info-price">Mulai dari Rp 100.000</div>
             </div>
           </div>
 
           <!-- CENTER PANEL: Product Display with Window Frame -->
           <div class="product-display-panel">
             <div class="product-model-display">
-              <!-- Model 1: Basketball -->
-              <div class="product-model-item active" id="model-basketball" data-model="basketball">
+              <!-- Model 1: Baseball -->
+              <div class="product-model-item active" id="model-baseball" data-model="baseball">
                 <div class="product-model-image">
-                  <img src="/assets/images/Basket.png" alt="Basketball Jersey" class="product-model-img" loading="lazy">
+                  <img src="/assets/images/Baseball.png" alt="Baseball Jersey" class="product-model-img" loading="lazy">
                 </div>
               </div>
 
-              <!-- Model 2: Futsal -->
-              <div class="product-model-item" id="model-futsal" data-model="futsal">
+              <!-- Model 2: Basic -->
+              <div class="product-model-item" id="model-basic" data-model="basic">
                 <div class="product-model-image">
-                  <img src="/assets/images/Basic.png" alt="Futsal Jersey" class="product-model-img" loading="lazy">
+                  <img src="/assets/images/Basic.png" alt="Basic Jersey" class="product-model-img" loading="lazy">
                 </div>
               </div>
 
-              <!-- Model 3: Volleyball -->
-              <div class="product-model-item" id="model-volleyball" data-model="volleyball">
+              <!-- Model 3: Basket -->
+              <div class="product-model-item" id="model-basket" data-model="basket">
                 <div class="product-model-image">
-                  <img src="/assets/images/Polo.png" alt="Volleyball Jersey" class="product-model-img" loading="lazy">
+                  <img src="/assets/images/Basket.png" alt="Basket Jersey" class="product-model-img" loading="lazy">
                 </div>
               </div>
 
-              <!-- Model 4: Football -->
-              <div class="product-model-item" id="model-football" data-model="football">
+              <!-- Model 4: Polo -->
+              <div class="product-model-item" id="model-polo" data-model="polo">
                 <div class="product-model-image">
-                  <img src="/assets/images/Baseball.png" alt="Football Jersey" class="product-model-img" loading="lazy">
+                  <img src="/assets/images/Polo.png" alt="Polo Jersey" class="product-model-img" loading="lazy">
                 </div>
               </div>
 
-              <!-- Model 5: Custom -->
-              <div class="product-model-item" id="model-custom" data-model="custom">
+              <!-- Model 5: Set -->
+              <div class="product-model-item" id="model-set" data-model="set">
                 <div class="product-model-image">
-                  <img src="/assets/images/Set.png" alt="Custom Jersey" class="product-model-img" loading="lazy">
+                  <img src="/assets/images/Set.png" alt="Set Jersey" class="product-model-img" loading="lazy">
                 </div>
               </div>
             </div>
@@ -249,17 +368,50 @@
 
           <!-- RIGHT PANEL: Sport Icon Tabs -->
           <div class="product-tabs-panel">
-            <div class="product-tabs-title">Pilih Olahraga</div>
-            <div class="sport-icon-tabs" role="tablist" aria-label="Sport selection">
-              <!-- Tab 1: Basketball -->
+            <div class="product-tabs-title">Pilih Produk</div>
+            <div class="sport-icon-tabs" role="tablist" aria-label="Product selection">
+              <!-- Tab 1: Baseball -->
               <button
                 class="sport-icon-tab active"
                 role="tab"
                 aria-selected="true"
-                aria-controls="model-basketball"
-                aria-describedby="info-basketball"
-                data-sport="basketball"
-                title="Basketball">
+                aria-controls="model-baseball"
+                aria-describedby="info-baseball"
+                data-sport="baseball"
+                title="Baseball">
+                <!-- Baseball icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M16 12a4 4 0 0 1-8 0"></path>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                  <path d="M2 12h20"></path>
+                </svg>
+              </button>
+
+              <!-- Tab 2: Basic -->
+              <button
+                class="sport-icon-tab"
+                role="tab"
+                aria-selected="false"
+                aria-controls="model-basic"
+                aria-describedby="info-basic"
+                data-sport="basic"
+                title="Basic">
+                <!-- Shirt icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.47a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.47a2 2 0 00-1.34-2.23z"></path>
+                </svg>
+              </button>
+
+              <!-- Tab 3: Basket -->
+              <button
+                class="sport-icon-tab"
+                role="tab"
+                aria-selected="false"
+                aria-controls="model-basket"
+                aria-describedby="info-basket"
+                data-sport="basket"
+                title="Basket">
                 <!-- Basketball icon -->
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
                   <circle cx="12" cy="12" r="10"></circle>
@@ -268,32 +420,15 @@
                 </svg>
               </button>
 
-              <!-- Tab 2: Futsal -->
+              <!-- Tab 4: Polo -->
               <button
                 class="sport-icon-tab"
                 role="tab"
                 aria-selected="false"
-                aria-controls="model-futsal"
-                aria-describedby="info-futsal"
-                data-sport="futsal"
-                title="Futsal">
-                <!-- Activity/Football icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
-                  <path d="M2 12h20"></path>
-                </svg>
-              </button>
-
-              <!-- Tab 3: Volleyball -->
-              <button
-                class="sport-icon-tab"
-                role="tab"
-                aria-selected="false"
-                aria-controls="model-volleyball"
-                aria-describedby="info-volleyball"
-                data-sport="volleyball"
-                title="Volleyball">
+                aria-controls="model-polo"
+                aria-describedby="info-polo"
+                data-sport="polo"
+                title="Polo">
                 <!-- User icon -->
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
@@ -301,36 +436,15 @@
                 </svg>
               </button>
 
-              <!-- Tab 4: Football -->
+              <!-- Tab 5: Set -->
               <button
                 class="sport-icon-tab"
                 role="tab"
                 aria-selected="false"
-                aria-controls="model-football"
-                aria-describedby="info-football"
-                data-sport="football"
-                title="Football">
-                <!-- Trophy icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
-                  <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
-                  <path d="M4 22h16"></path>
-                  <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
-                  <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
-                  <path d="M18 2h6v6a4 4 0 0 1-4 4h-2"></path>
-                  <path d="M6 2H0v6a4 4 0 0 0 4 4h2"></path>
-                </svg>
-              </button>
-
-              <!-- Tab 5: Custom -->
-              <button
-                class="sport-icon-tab"
-                role="tab"
-                aria-selected="false"
-                aria-controls="model-custom"
-                aria-describedby="info-custom"
-                data-sport="custom"
-                title="Custom">
+                aria-controls="model-set"
+                aria-describedby="info-set"
+                data-sport="set"
+                title="Set">
                 <!-- Star icon -->
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
                   <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
@@ -356,24 +470,28 @@
         <!-- Preview Card -->
         <div class="temukan-preview-card">
           <span class="preview-question-label">Pertanyaan 1 dari 5</span>
-          <h3 class="preview-question-title">Olahraga apa yang kamu mainkan?</h3>
+          <h3 class="preview-question-title">Model jersey apa yang kamu cari?</h3>
 
           <div class="preview-options-grid" id="previewOptionsGrid">
-            <div class="preview-option-card" data-value="basketball">
-              <span class="preview-option-icon">🏀</span>
-              <span class="preview-option-label">Basketball</span>
+            <div class="preview-option-card" data-value="basic">
+              <span class="preview-option-label">Basic</span>
+              <span class="preview-option-sublabel">Simple & versatile</span>
             </div>
-            <div class="preview-option-card" data-value="football">
-              <span class="preview-option-icon">⚽</span>
-              <span class="preview-option-label">Football</span>
+            <div class="preview-option-card" data-value="basket">
+              <span class="preview-option-label">Basket</span>
+              <span class="preview-option-sublabel">Athletic & bold</span>
             </div>
-            <div class="preview-option-card" data-value="futsal">
-              <span class="preview-option-icon">🥅</span>
-              <span class="preview-option-label">Futsal</span>
+            <div class="preview-option-card" data-value="baseball">
+              <span class="preview-option-label">Baseball</span>
+              <span class="preview-option-sublabel">Classic & casual</span>
             </div>
-            <div class="preview-option-card" data-value="volleyball">
-              <span class="preview-option-icon">🏐</span>
-              <span class="preview-option-label">Volleyball</span>
+            <div class="preview-option-card" data-value="polo">
+              <span class="preview-option-label">Polo</span>
+              <span class="preview-option-sublabel">Smart & elegant</span>
+            </div>
+            <div class="preview-option-card" data-value="set">
+              <span class="preview-option-label">Set</span>
+              <span class="preview-option-sublabel">Complete & coordinated</span>
             </div>
           </div>
 
