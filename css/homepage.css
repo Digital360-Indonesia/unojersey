@@ -1122,7 +1122,6 @@ body {
   background: linear-gradient(135deg, var(--color-gray-100) 0%, var(--color-light) 100%);
   padding: 0;
   position: relative;
-  z-index: 10;
 }
 
 .temukan-preview::before {
@@ -1181,14 +1180,12 @@ body {
 /* Preview Card - Bigger on desktop */
 .temukan-preview-card {
   border: 2px solid var(--color-gray-300);
-  background: #ffffff;
+  background: transparent;
   border-radius: var(--radius-xl);
   padding: var(--spacing-6) var(--spacing-8);
   transition: all var(--transition-normal);
   max-width: 600px;
   margin: 0 auto;
-  position: relative;
-  z-index: 20;
 }
 
 .temukan-preview-card:hover {
@@ -1309,7 +1306,7 @@ body {
 @media (max-width: 768px) {
   .temukan-preview {
     padding-top: var(--spacing-6);
-    padding-bottom: var(--spacing-16);
+    padding-bottom: var(--spacing-8);
     min-height: auto;
     height: auto;
   }
@@ -1522,7 +1519,7 @@ body {
 @media (max-width: 768px) {
   .portfolio-cta {
     margin-top: 24px;
-    margin-bottom: 24px;
+    margin-bottom: 40px;
     padding-bottom: 0;
   }
 
@@ -1730,10 +1727,8 @@ body {
 
 @media (max-width: 768px) {
   .portfolio {
-    padding: var(--spacing-8) 0 var(--spacing-20) 0;
+    padding: var(--spacing-6) 0 var(--spacing-20) 0;
     overflow: visible;
-    position: relative;
-    z-index: 1;
   }
 
   .portfolio-header {
