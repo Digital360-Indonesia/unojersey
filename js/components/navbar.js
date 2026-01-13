@@ -52,12 +52,7 @@
         this.navbar.classList.remove('scrolled');
       }
 
-      // Hide/show on scroll for mobile
-      if (this.isMobile && currentScrollY > this.lastScrollY && currentScrollY > 100) {
-        this.navbar.style.transform = 'translateY(-100%)';
-      } else {
-        this.navbar.style.transform = 'translateY(0)';
-      }
+      // Hide/show on scroll disabled for mobile - navbar always visible
 
       this.lastScrollY = currentScrollY;
     }
@@ -104,7 +99,6 @@
       this.isMobile = window.innerWidth <= 768;
       if (!this.isMobile) {
         this.closeMobileMenu();
-        this.navbar.style.transform = 'translateY(0)';
       }
     }
 
