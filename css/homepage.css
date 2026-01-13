@@ -74,7 +74,7 @@ body {
 }
 
 .nav-tagline-text {
-  font-family: var(--font-subheading);
+  font-family: 'Bebas Neue', sans-serif;
   font-weight: 700;
   font-size: 48px; /* Initial size, will animate to 24px */
   color: var(--color-light);

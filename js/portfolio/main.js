@@ -9,47 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
   window.scrollTo(0, 0);
 
   // ========================================
-  // NAVBAR SCROLL EFFECT
-  // ========================================
-  const navbar = document.getElementById('navbar');
-  const navTagline = document.getElementById('nav-tagline');
-  const navTaglineText = navTagline?.querySelector('.nav-tagline-text');
-  const navbarLogo = document.getElementById('navbar-logo');
-
-  function updateNavbar() {
-    const scrollY = window.scrollY;
-
-    if (scrollY > 50) {
-      navbar?.classList.add('scrolled');
-
-      if (navTaglineText) {
-        navTaglineText.style.fontSize = '24px';
-      }
-
-      if (navbarLogo) {
-        navbarLogo.classList.remove('navbar-logo-hidden');
-        navbarLogo.classList.add('navbar-logo-visible');
-        navbarLogo.src = '/assets/images/UNO-Black.png';
-      }
-    } else {
-      navbar?.classList.remove('scrolled');
-
-      if (navTaglineText) {
-        navTaglineText.style.fontSize = '48px';
-      }
-
-      if (navbarLogo) {
-        navbarLogo.classList.remove('navbar-logo-visible');
-        navbarLogo.classList.add('navbar-logo-hidden');
-        navbarLogo.src = '/assets/images/UNO-White.png';
-      }
-    }
-  }
-
-  window.addEventListener('scroll', updateNavbar);
-  updateNavbar();
-
-  // ========================================
   // PORTFOLIO DATA
   // ========================================
   const portfolioItems = [
