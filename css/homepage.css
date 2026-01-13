@@ -389,6 +389,7 @@ body {
   .products {
     height: auto;
     min-height: auto;
+    overflow: visible;
   }
 
   /* Temukan Preview Section - Auto height on mobile */
@@ -398,11 +399,12 @@ body {
     padding: var(--spacing-12) 0;
   }
 
-  /* Portfolio Section - Auto height on mobile */
+  /* Portfolio Section - Auto height on mobile, remove overflow hidden */
   .portfolio {
     height: auto;
     min-height: auto;
     padding: var(--spacing-12) 0;
+    overflow: visible;
   }
 
   /* Footer Section - Auto height on mobile */
@@ -1149,14 +1151,14 @@ body {
   line-height: var(--leading-relaxed);
 }
 
-/* Preview Card - More compact layout */
+/* Preview Card - Bigger on desktop */
 .temukan-preview-card {
   border: 2px solid var(--color-gray-300);
   background: transparent;
   border-radius: var(--radius-xl);
-  padding: var(--spacing-5) var(--spacing-6);
+  padding: var(--spacing-6) var(--spacing-8);
   transition: all var(--transition-normal);
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
 }
 
@@ -1670,9 +1672,11 @@ body {
 @media (max-width: 768px) {
   .portfolio {
     padding: var(--spacing-4) 0 var(--spacing-3) 0;
+    overflow: visible;
   }
 
   .portfolio-header {
+    margin-top: 0;
     margin-bottom: var(--spacing-2);
     gap: var(--spacing-2);
   }
