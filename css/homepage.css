@@ -961,6 +961,7 @@ body {
     gap: 0;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
+    padding: 0 5px;
     /* Show scrollbar */
     scrollbar-width: auto;
     -ms-overflow-style: auto;
@@ -979,9 +980,9 @@ body {
   /* Product Slide */
   .product-slide {
     flex-shrink: 0;
-    width: calc(100vw - 10px);
-    max-width: calc(100vw - 10px);
-    scroll-snap-align: start;
+    width: calc(100vw - 20px);
+    max-width: calc(100vw - 20px);
+    scroll-snap-align: center;
     display: flex;
     flex-direction: column;
     padding: 0 var(--spacing-4) var(--spacing-6);
