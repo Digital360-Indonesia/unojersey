@@ -1,6 +1,6 @@
 /**
  * UNO JERSEY - Portfolio Data
- * Collection of portfolio items for the masonry grid
+ * Collection of portfolio items for the portfolio grid
  * 4 items with autoplay videos
  */
 
@@ -9,41 +9,37 @@ const portfolioItems = [
     id: 1,
     image: '/assets/images/portfolio/basketball-team-1.jpg',
     video: '/assets/videos/1.mp4',
-    title: 'Tim Basketball SMA 17',
-    category: 'basketball',
+    title: 'Sablon Reflektif',
     size: 'small',
     type: 'video',
-    description: 'Jersey custom untuk tim basketball SMA 17'
+    description: 'Ketika jersey kelasmu paling menyala dari kelas sebelah😎'
   },
   {
     id: 2,
     image: '/assets/images/portfolio/futsal-design-1.jpg',
     video: '/assets/videos/2.mp4',
-    title: 'Jersey Futsal Custom',
-    category: 'futsal',
+    title: 'Support Jalan-jalan',
     size: 'small',
     type: 'video',
-    description: 'Desain jersey futsal gradasi'
+    description: 'Disini kita bakal support jalan-jalan kelasmu pake cashback + free ongkir🤩🫶🏻'
   },
   {
     id: 3,
     image: '/assets/images/portfolio/football-team-1.jpg',
     video: '/assets/videos/3.mp4',
-    title: 'Tim Football United',
-    category: 'football',
+    title: 'Proses Jersey',
     size: 'small',
     type: 'video',
-    description: 'Jersey football dengan material premium'
+    description: 'Proses dibalik jersey keren kalian kalo customnya di Uno Jersey🤩✨'
   },
   {
     id: 4,
     image: '/assets/images/portfolio/volleyball-team-1.jpg',
     video: '/assets/videos/4.mp4',
-    title: 'Tim Voli Putri',
-    category: 'volleyball',
+    title: 'Unboxing Jersey Boxy',
     size: 'small',
     type: 'video',
-    description: 'Jersey voli desain feminin'
+    description: 'Warna + desainnya cakep banget apalagi pake cuttingan boxy😎'
   }
 ];
 
