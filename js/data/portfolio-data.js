@@ -10,6 +10,7 @@ const portfolioItems = [
     image: '/assets/images/portfolio/basketball-team-1.jpg',
     video: '/assets/videos/1.mp4',
     title: 'Sablon Reflektif',
+    category: 'jersey',
     size: 'small',
     type: 'video',
     description: 'Ketika jersey kelasmu paling menyala dari kelas sebelah😎'
@@ -19,6 +20,7 @@ const portfolioItems = [
     image: '/assets/images/portfolio/futsal-design-1.jpg',
     video: '/assets/videos/2.mp4',
     title: 'Support Jalan-jalan',
+    category: 'jersey',
     size: 'small',
     type: 'video',
     description: 'Disini kita bakal support jalan-jalan kelasmu pake cashback + free ongkir🤩🫶🏻'
@@ -28,6 +30,7 @@ const portfolioItems = [
     image: '/assets/images/portfolio/football-team-1.jpg',
     video: '/assets/videos/3.mp4',
     title: 'Proses Jersey',
+    category: 'jersey',
     size: 'small',
     type: 'video',
     description: 'Proses dibalik jersey keren kalian kalo customnya di Uno Jersey🤩✨'
@@ -37,6 +40,7 @@ const portfolioItems = [
     image: '/assets/images/portfolio/volleyball-team-1.jpg',
     video: '/assets/videos/4.mp4',
     title: 'Unboxing Jersey Boxy',
+    category: 'jersey',
     size: 'small',
     type: 'video',
     description: 'Warna + desainnya cakep banget apalagi pake cuttingan boxy😎'
