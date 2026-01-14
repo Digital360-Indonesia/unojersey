@@ -15,5 +15,13 @@ export default defineConfig({
       // Ensure proper asset handling
       assetsInlineLimit: 0,
     },
+    server: {
+      // Allow all hosts for dev server
+      allowedHosts: true,
+    },
+    preview: {
+      // Allow specific hosts for preview server (production)
+      allowedHosts: ['unojersey.com', 'www.unojersey.com', 'localhost'],
+    },
   },
 });

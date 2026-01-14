@@ -31,8 +31,11 @@ sudo -u "$DEPLOY_USER" npm install
 echo "🔨 Building Astro site (as $DEPLOY_USER)..."
 sudo -u "$DEPLOY_USER" npm run build
 
-echo "♻️ Restarting PM2 process (as $DEPLOY_USER)..."
-# Cek apakah app sudah ada di PM2
+echo "📁 Build complete - files ready in dist/ directory"
+echo "📍 Repository location: $(pwd)"
+
+echo "🚀 Starting PM2 preview server (as $DEPLOY_USER)..."
+# Jalankan dari project directory untuk akses vite.config.js
 if sudo -u "$DEPLOY_USER" pm2 list | grep -q "$PM2_APP_NAME"; then
     sudo -u "$DEPLOY_USER" pm2 restart "$PM2_APP_NAME"
 else
@@ -40,5 +43,6 @@ else
 fi
 
 echo "✅ Deployment completed!"
+echo "🌐 Site running at: http://localhost:9904"
 echo "📊 PM2 Status:"
 sudo -u "$DEPLOY_USER" pm2 list
