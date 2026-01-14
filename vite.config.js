@@ -5,6 +5,6 @@ export default defineConfig({
     allowedHosts: true,
   },
   preview: {
-    allowedHosts: true,
+    allowedHosts: ['unojersey.com', 'www.unojersey.com', 'localhost'],
   },
 });
