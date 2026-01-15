@@ -17,9 +17,9 @@ const sortedPosts = allPosts.sort((a, b) =>
       </p>
     </header>
 
-    <div class="blog-grid">
-      {sortedPosts.map((post) => (
-        <article class="blog-card">
+    <div class="blog-grid" id="blogGrid">
+      {sortedPosts.slice(0, 6).map((post, index) => (
+        <article class="blog-card" data-index={index}>
           <a href={`/berita/${post.slug}/`} class="blog-card-link">
             {post.data.featuredImage && (
               <div class="blog-card-image">
@@ -57,7 +57,99 @@ const sortedPosts = allPosts.sort((a, b) =>
         </article>
       ))}
     </div>
+
+    {sortedPosts.length > 6 && (
+      <div class="load-more-container">
+        <button class="load-more-btn" id="loadMoreBtn">
+          Muat Lebih Banyak
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 5v14M5 12l7 7 7-7"/>
+          </svg>
+        </button>
+      </div>
+    )}
   </div>
+
+  <script define:vars={{ sortedPosts }}>
+    (function() {
+      'use strict';
+
+      const blogGrid = document.getElementById('blogGrid');
+      const loadMoreBtn = document.getElementById('loadMoreBtn');
+
+      if (!loadMoreBtn) return;
+
+      let currentPage = 1;
+      const postsPerPage = 6;
+      const totalPosts = sortedPosts.length;
+      const totalPages = Math.ceil(totalPosts / postsPerPage);
+
+      loadMoreBtn.addEventListener('click', function() {
+        currentPage++;
+
+        const startIndex = currentPage * postsPerPage;
+        const endIndex = startIndex + postsPerPage;
+        const postsToShow = sortedPosts.slice(startIndex, endIndex);
+
+        postsToShow.forEach((post, index) => {
+          const globalIndex = startIndex + index;
+          const article = document.createElement('article');
+          article.className = 'blog-card';
+          article.style.opacity = '0';
+          article.style.transform = 'translateY(20px)';
+
+          article.innerHTML = `
+            <a href="/berita/${post.slug}/" class="blog-card-link">
+              ${post.data.featuredImage ? `
+                <div class="blog-card-image">
+                  <img
+                    src="${post.data.featuredImage}"
+                    alt="${post.data.title}"
+                    loading="lazy"
+                  />
+                </div>
+              ` : ''}
+              <div class="blog-card-content">
+                <div class="blog-card-meta">
+                  <time datetime="${post.data.pubDate.toISOString()}">
+                    ${post.data.pubDate.toLocaleDateString('id-ID', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric'
+                    })}
+                  </time>
+                  ${post.data.category ? `
+                    <span class="meta-separator">•</span>
+                    <span class="category">${post.data.category}</span>
+                  ` : ''}
+                </div>
+                <h2 class="blog-card-title">
+                  ${post.data.title}
+                </h2>
+                <p class="blog-card-excerpt">
+                  ${post.data.description}
+                </p>
+              </div>
+            </a>
+          `;
+
+          blogGrid.appendChild(article);
+
+          // Animate in
+          setTimeout(() => {
+            article.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            article.style.opacity = '1';
+            article.style.transform = 'translateY(0)';
+          }, index * 100);
+        });
+
+        // Hide button if all posts are loaded
+        if (currentPage >= totalPages) {
+          loadMoreBtn.style.display = 'none';
+        }
+      });
+    })();
+  </script>
 </Layout>
 
 <style>
@@ -180,6 +272,46 @@ const sortedPosts = allPosts.sort((a, b) =>
     overflow: hidden;
   }
 
+  .load-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+  }
+
+  .load-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 32px;
+    background: #E63946;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .load-more-btn:hover {
+    background: #c1121f;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(230, 57, 70, 0.3);
+  }
+
+  .load-more-btn:active {
+    transform: translateY(0);
+  }
+
+  .load-more-btn svg {
+    transition: transform 0.3s ease;
+  }
+
+  .load-more-btn:hover svg {
+    transform: translateY(2px);
+  }
+
   @media (max-width: 768px) {
     .blog-container {
       padding: 60px 16px 30px;
@@ -208,6 +340,11 @@ const sortedPosts = allPosts.sort((a, b) =>
 
     .blog-card-title {
       font-size: 24px;
+    }
+
+    .load-more-btn {
+      padding: 14px 28px;
+      font-size: 15px;
     }
   }
 </style>
