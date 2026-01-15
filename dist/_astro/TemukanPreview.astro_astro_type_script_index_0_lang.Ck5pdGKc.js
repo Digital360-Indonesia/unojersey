@@ -1,0 +1,1 @@
+const c=document.querySelectorAll(".preview-option-card"),s=document.getElementById("preview-next-btn");c.forEach(e=>{e.addEventListener("click",()=>{c.forEach(n=>n.classList.remove("selected")),e.classList.add("selected");const t=e.getAttribute("data-value");s&&t&&(s.href=`/temukan?sport=${t}`)})});
