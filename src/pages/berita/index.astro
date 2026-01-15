@@ -173,8 +173,9 @@ const sortedPosts = allPosts.sort((a, b) =>
           skeletons.push(skeleton);
         });
 
-        // Show real content immediately
-        skeletons.forEach((skeleton, index) => {
+        // After showing skeleton, replace with real content
+        setTimeout(() => {
+          skeletons.forEach((skeleton, index) => {
             const post = postsToShow[index];
             if (!post) return;
 
@@ -276,6 +277,7 @@ const sortedPosts = allPosts.sort((a, b) =>
               </svg>
             `;
           }
+        }, 300);
       });
     })();
   </script>

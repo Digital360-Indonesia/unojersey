@@ -329,9 +329,9 @@
     // Clear existing items
     portfolioGrid.innerHTML = '';
 
-    // On mobile, only show first 2 items
+    // On mobile, only show first 4 items
     const isMobile = window.innerWidth <= 768;
-    const itemsToShow = isMobile ? portfolioItems.slice(0, 2) : portfolioItems;
+    const itemsToShow = isMobile ? portfolioItems.slice(0, 4) : portfolioItems;
 
     // Generate portfolio cards
     itemsToShow.forEach((item, index) => {
