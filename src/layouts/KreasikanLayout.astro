@@ -35,6 +35,15 @@ const {
 
     <!-- html2canvas for export -->
     <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script is:inline src="https://www.googletagmanager.com/gtag/js?id=G-HWXXE5WFQL"></script>
+    <script is:inline define:vars={{ GA_MEASUREMENT_ID: 'G-HWXXE5WFQL' }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HWXXE5WFQL');
+    </script>
   </head>
   <body class="bg-gray-100 font-['Inter']">
     <slot />
